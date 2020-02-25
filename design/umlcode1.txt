@@ -1,0 +1,69 @@
+
+updated test
+
+@startuml
+
+title Individual - Class Diagram
+
+
+class account {
+  +string username
+  +string password
+  +string firstname
+  +string lastname
+  +string address
+  +certification[] certifications
+  
+  
+  +isLoggedin()
+  +login()
+  +logout()
+  +getProfile()
+  +createProfile()
+}
+
+class certification{
++profile owner
++string institution
++ID
++string issue date
++string expiration date
+
++getID()
++issue()
++expire()
+}
+class course{
++profile profile
++test test
++certification certification
++string institution
+
++getInstitution()
+}
+
+class test{
++string title
++string[] questions
++string[] answers
+
++int getResults()
++submit()
++pass()
++fail()
+}
+
+
+
+
+account <-- certification
+
+course <--> test
+
+course --> certification
+
+account --> course
+
+
+
+@enduml
